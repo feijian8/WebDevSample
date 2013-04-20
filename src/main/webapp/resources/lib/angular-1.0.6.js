@@ -189,7 +189,7 @@ function nextUid() {
  * Extends the destination object `dst` by copying all of the properties from the `src` object(s)
  * to `dst`. You can specify multiple `src` objects.
  *
- * @param {Object} dst Destination object.
+ * @param {Object} dst TravelService object.
  * @param {...Object} src Source object(s).
  */
 function extend(dst) {
@@ -529,7 +529,7 @@ function isLeafNode (node) {
  *
  * @param {*} source The source that will be used to make a copy.
  *                   Can be any type, including primitives, `null`, and `undefined`.
- * @param {(Object|Array)=} destination Destination into which the source is copied. If
+ * @param {(Object|Array)=} destination TravelService into which the source is copied. If
  *     provided, must be of the same type as `source`.
  * @returns {*} The copy or updated `destination`, if `destination` was specified.
  */

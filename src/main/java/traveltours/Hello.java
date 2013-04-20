@@ -1,4 +1,4 @@
-package webdevsamples;
+package traveltours;
 
 public class Hello {
 

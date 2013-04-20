@@ -1,4 +1,4 @@
-package webdevsamples;
+package traveltours;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
