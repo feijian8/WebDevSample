@@ -1,11 +1,16 @@
 package traveltours.rest.service;
 
 import org.apache.commons.lang.time.DateUtils;
+import org.jboss.resteasy.specimpl.MultivaluedMapImpl;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import traveltours.rest.model.Travel;
 
+import javax.ws.rs.core.MultivaluedMap;
+import java.util.ArrayList;
 import java.util.Date;
+
+import static org.junit.Assert.assertEquals;
+
 
 public class TravelServiceTest {
 
@@ -25,12 +30,23 @@ public class TravelServiceTest {
         travel.setTo(to);
 
         TravelService service = new TravelService();
-        Travel travelRes = service.create(travel);
 
-        assertEquals(travel.getFrom(), travelRes.getFrom());
-        assertEquals(travel.getTo(), travelRes.getTo());
+        MultivaluedMap<String, String> formValue = new MultivaluedMapImpl<String, String>();
 
+        ArrayList<String> countries = new ArrayList();
+        countries.add("Grækenland");
+        formValue.put("country", countries);
 
+        ArrayList<String> areas = new ArrayList();
+        areas.add("Naxos");
+        formValue.put("area", areas);
 
+        Travel travelRes = service.create(formValue);
+
+        assertEquals(travel.getCountry(), travelRes.getCountry());
+        assertEquals(travel.getArea(), travelRes.getArea());
+
+        //assertEquals(travel.getFrom(), travelRes.getFrom());
+        //assertEquals(travel.getTo(), travelRes.getTo());
     }
 }

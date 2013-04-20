@@ -1,35 +1,50 @@
 package traveltours.rest.service;
 
-import traveltours.rest.model.Resource;
 import traveltours.rest.model.Travel;
 
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import java.util.ArrayList;
 import java.util.List;
 
+@Path("/travel")
 public class TravelService extends ResourceService<Travel> {
 
-    @Override
-    public Travel create(Travel travel) {
-        System.out.println("TravelService.create: " + travel);
+    private Travel currentStub;
+
+    public Travel create(MultivaluedMap<String, String> formParams) {
+        System.out.println("TravelService.create: " + formParams);
+
+        String country = formParams.getFirst("country");
+        String area = formParams.getFirst("area");
+
+        Travel travel = new Travel();
+        //dummy...
+        travel.setId("1");
+        travel.setCountry(country);
+        travel.setArea(area);
+
+        this.currentStub = travel;
         return travel;
     }
 
-    @Override
     public Travel read(String id) {
-        return null;
+        System.out.println("TravelService.read      **************************************");
+        return currentStub;
     }
 
-    @Override
-    public Travel update(Travel travel) {
-        return null;
+    public Travel update(MultivaluedMap<String, String> formParams) {
+        return currentStub;
     }
 
-    @Override
     public void delete(Travel travel) {
-
+        this.currentStub = null;
     }
 
-    @Override
     public List<Travel> all() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        List<Travel> travels = new ArrayList();
+        travels.add(currentStub);
+        return travels;
     }
 }
