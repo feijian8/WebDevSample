@@ -1,1 +1,1 @@
-var myModule = angular.module('TravelTours', []);
+var travelTours = angular.module('TravelTours', []);
