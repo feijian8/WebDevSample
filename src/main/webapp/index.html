@@ -11,9 +11,16 @@
 </head>
 <body>
 
-    <input type="text" ng-model="name">
-    <h1>{{name}}</h1>
-<h2>fix</h2>
+    <form action="rest/travel/create" method="post">
+
+        <input type="text" name="country" />
+        <input type="text" name="area" />
+
+        <input type="submit" />
+
+    </form>
+
+
 
 
 
