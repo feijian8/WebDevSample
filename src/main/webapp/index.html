@@ -19,39 +19,81 @@
 </head>
 <body>
 
-<div ng-controller="AlertDemoCtrl">
-    <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
-    <button class='btn' ng-click="addAlert()">Add Alert</button>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Travel Tours</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
+<div class="container">
 
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <div ng-controller="CarouselDemoCtrl">
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <div style="background: url({{slide.image}}); background-repeat:no-repeat; width: 975px; height: 350px; margin: auto;">
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
+        </div>
+    </div>
 
-<section>
-    <header>
-        <h3>Travel</h3>
-    </header>
-    <form action="rest/travel/create" method="post">
-        <input type="text" name="country" />
-        <input type="text" name="area" />
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="span4">
+            <h2>Search Travel</h2>
 
-        <input type="submit" />
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui. </p>
 
-    </form>
+            <p><a class="btn" href="#">Search Travel &raquo;</a></p>
+        </div>
+        <div class="span4">
+            <h2>View Countries</h2>
 
-</section>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                euismod. Donec sed odio dui. </p>
 
-<section>
-    <header>
-        <h3>Vacancy</h3>
-    </header>
-    <form action="rest/vacancy/create" method="post">
-        <input type="text" name="name" >
-        <input type="submit" />
-    </form>
-</section>
+            <p><a class="btn" href="#">View Countries &raquo;</a></p>
+        </div>
+        <div class="span4">
+            <h2>Find Hotel</h2>
 
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
+                porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+                fermentum massa justo sit amet risus.</p>
 
+            <p><a class="btn" href="#">Find Hotel &raquo;</a></p>
+        </div>
+    </div>
 
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2013</p>
+    </footer>
+
+</div>
 
 </body>
 </html>
