@@ -3,13 +3,27 @@
 <head ng-app="TravelTours">
     <meta charset="utf-8">
     <title>TravelTours</title>
+
+    <!--
     <link rel="stylesheet" href="resources/css/reset.css">
     <link rel="stylesheet" href="resources/css/app.css">
     <script src="resources/lib/jquery-2.0.0.js"></script>
+    -->
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <script src="resources/lib/angular-1.0.6.js"></script>
+    <script src="resources/lib/ui-bootstrap-tpls-0.2.0.js"></script>
+
     <script src="resources/script/traveltours.js"></script>
+
 </head>
 <body>
+
+<div ng-controller="AlertDemoCtrl">
+    <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+    <button class='btn' ng-click="addAlert()">Add Alert</button>
+</div>
+
 
 
 <section>
