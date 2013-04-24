@@ -46,13 +46,15 @@
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
         <div ng-controller="CarouselDemoCtrl">
-            <carousel interval="myInterval">
-                <slide ng-repeat="slide in slides" active="slide.active">
-                    <div style="background: url({{slide.image}}); background-repeat:no-repeat; width: 975px; height: 350px; margin: auto;">
-                        <p>{{slide.text}}</p>
-                    </div>
-                </slide>
-            </carousel>
+			<carousel interval="myInterval"> 
+				<slide ng-repeat="slide in slides" active="slide.active">
+					<div style="background: url({{slide.image}}); background-repeat: no-repeat; width: 975px; height: 350px; margin: auto;">
+                        <div style="position:absolute; top:50px; background-color: #eee; border: 1px solid #000">
+                        	<p>{{slide.text}}</p>
+                        </div>
+					</div>					
+				</slide> 
+			</carousel>
         </div>
     </div>
 
@@ -90,7 +92,7 @@
     <hr>
 
     <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Travel Tours 2013</p>
     </footer>
 
 </div>
