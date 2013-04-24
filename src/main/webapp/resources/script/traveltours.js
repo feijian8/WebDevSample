@@ -1,30 +1,12 @@
-var travelTours = angular.module('TravelTours', ['ui.bootstrap']);
+var travelToursModule = angular.module('TravelTours', ['ui.bootstrap']);
 
-travelTours.controller('AlertDemoCtrl', function AlertDemoCtrl($scope) {
-    $scope.alerts = [
-        { type: 'error', msg: 'Oh snap! Change a few things up and try submitting again.' },
-        { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
-    ];
+traveltours = {};
 
-    $scope.addAlert = function() {
-        $scope.alerts.push({
-            msg: 'Another alert!',
-            type: 'error'
+//Set up the routes....
+travelToursModule.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.
+        when('/home', {templateUrl: 'partials/traveltours/home/home.html',   controller: traveltours.home.HomeCtrl}).
+        when('/travel', {templateUrl: 'partials/traveltours/travel/travel.html',   controller: traveltours.travel.TravelController}).
+        otherwise({redirectTo: '/home'});
+}]);
 
-        });
-    };
-
-    $scope.closeAlert = function(index) {
-        $scope.alerts.splice(index, 1);
-    };
-
-});
-
-travelTours.controller("CarouselDemoCtrl", function CarouselDemoCtrl($scope) {
-    $scope.myInterval = 5000;
-    $scope.slides = [
-        {image: 'resources/images/greece_first.jpg',text: 'Greece - Rhodos'},
-        {image: 'resources/images/greece_second.jpg',text: 'Greece - Molivos'},
-        {image: 'resources/images/greece_third.jpg',text: 'Greece - Lesbos'}
-    ];
-});

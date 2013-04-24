@@ -5,16 +5,16 @@
     <title>TravelTours</title>
 
     <!--
-    <link rel="stylesheet" href="resources/css/reset.css">
-    <link rel="stylesheet" href="resources/css/app.css">
-    <script src="resources/lib/jquery-2.0.0.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     -->
-
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="resources/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="resources/css/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     <script src="resources/lib/angular-1.0.6.js"></script>
     <script src="resources/lib/ui-bootstrap-tpls-0.2.0.js"></script>
 
     <script src="resources/script/traveltours.js"></script>
+    <script src="resources/script/traveltours/home/home.js"></script>
+    <script src="resources/script/traveltours/travel/travel.js"></script>
 
 </head>
 <body>
@@ -41,61 +41,13 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" ng-view></div>
 
-    <!-- Main hero unit for a primary marketing message or call to action -->
-    <div class="hero-unit">
-        <div ng-controller="CarouselDemoCtrl">
-			<carousel interval="myInterval"> 
-				<slide ng-repeat="slide in slides" active="slide.active">
-					<div style="background: url({{slide.image}}); background-repeat: no-repeat; width: 975px; height: 350px; margin: auto;">
-                        <div style="position:absolute; top:50px; background-color: #eee; border: 1px solid #000">
-                        	<p>{{slide.text}}</p>
-                        </div>
-					</div>					
-				</slide> 
-			</carousel>
-        </div>
-    </div>
+<hr>
 
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="span4">
-            <h2>Search Travel</h2>
-
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-
-            <p><a class="btn" href="#">Search Travel &raquo;</a></p>
-        </div>
-        <div class="span4">
-            <h2>View Countries</h2>
-
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
-                euismod. Donec sed odio dui. </p>
-
-            <p><a class="btn" href="#">View Countries &raquo;</a></p>
-        </div>
-        <div class="span4">
-            <h2>Find Hotel</h2>
-
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula
-                porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-                fermentum massa justo sit amet risus.</p>
-
-            <p><a class="btn" href="#">Find Hotel &raquo;</a></p>
-        </div>
-    </div>
-
-    <hr>
-
-    <footer>
-        <p>&copy; Travel Tours 2013</p>
-    </footer>
-
-</div>
+<footer>
+    <p>&copy; Travel Tours 2013</p>
+</footer>
 
 </body>
 </html>
