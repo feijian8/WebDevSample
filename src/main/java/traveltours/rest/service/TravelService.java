@@ -13,6 +13,7 @@ public class TravelService extends ResourceService<Travel> {
 
     private static Travel currentStub;
 
+    /*
     public Travel create(MultivaluedMap<String, String> formParams) {
         System.out.println("TravelService.create: " + formParams);
 
@@ -27,6 +28,15 @@ public class TravelService extends ResourceService<Travel> {
 
         TravelService.currentStub = travel;
         return travel;
+    }
+    */
+
+    @Override
+    public Travel create(String formParams) {
+
+        System.out.println("TravelService.create");
+
+        return null;
     }
 
     public Travel read(String id) {

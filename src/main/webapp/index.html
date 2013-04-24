@@ -4,15 +4,17 @@
     <meta charset="utf-8">
     <title>TravelTours</title>
 
-    <!--
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-    -->
+    <!-- twitter bootstrap -->
     <link href="resources/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="resources/css/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Angular, Angular-resources and Angular UI bootstrap -->
     <script src="resources/lib/angular-1.0.6.js"></script>
+    <script src="resources/lib/angular-resource-1.0.6.js"></script>
     <script src="resources/lib/ui-bootstrap-tpls-0.2.0.js"></script>
 
-    <script src="resources/script/traveltours.js"></script>
+    <!-- Application specific javascript modules -->
+    <script src="resources/script/traveltours/traveltours.js"></script>
     <script src="resources/script/traveltours/home/home.js"></script>
     <script src="resources/script/traveltours/travel/travel.js"></script>
 
@@ -41,6 +43,10 @@
     </div>
 </div>
 
+<!-- Default starting point of the pages -->
+<div style="height: 42px"></div>
+
+<!-- This is where the pages will run -->
 <div class="container" ng-view></div>
 
 <hr>

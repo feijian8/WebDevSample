@@ -12,6 +12,7 @@ public class VacancyService extends ResourceService<Vacancy> {
 
     private static Vacancy currentStub;
 
+    /*
     @Override
     public Vacancy create(MultivaluedMap<String, String> formParams) {
 
@@ -27,6 +28,12 @@ public class VacancyService extends ResourceService<Vacancy> {
         VacancyService.currentStub = vacancy;
 
         return vacancy;
+    }
+    */
+
+    @Override
+    public Vacancy create(String formParams) {
+        return null;
     }
 
     @Override

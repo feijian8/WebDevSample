@@ -1,5 +1,18 @@
 <div ng-controller="traveltours.travel.TravelController">
-    <h1>{{hello}}</h1>
 
-    <input type="text" ng-model="hello" />
+    <form ng-submit="createTravel(country, area, price)">
+        <fieldset>
+            <legend>Create travel</legend>
+            <label>Enter country</label>
+            <input type="text" name="country" ng-model="country" />
+            <label>Enter area</label>
+            <input type="text" name="area" ng-model="area" />
+            <label>Enter price</label>
+            <input type="number" name="price" ng-model="price" />
+            <br>
+            <button type="submit" class="btn btn-primary" >Create travel</button>
+        </fieldset>
+    </form>
+
+
 </div>

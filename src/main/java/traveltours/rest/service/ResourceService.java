@@ -11,9 +11,10 @@ public abstract class ResourceService<T extends Resource> {
 
     @Path("/create")
     @POST
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    //@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
-    public abstract T create(MultivaluedMap<String, String> formParams);
+    //public abstract T create(MultivaluedMap<String, String> formParams);
+    public abstract T create(String formParams);
 
 
     @Path("/read/{id}")
