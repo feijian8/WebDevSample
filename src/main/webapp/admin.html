@@ -16,6 +16,7 @@
 
 <!-- Application specific javascript modules -->
 <script src="resources/script/traveltours/traveltoursAdmin.js"></script>
+<script src="resources/script/traveltours/admin/country/country.js"></script>
 
 </head>
 <body>
@@ -50,101 +51,29 @@
 				<div class="well sidebar-nav">
 					<ul class="nav nav-list">
 						<li class="nav-header">Travel</li>						
-						<li><a href="#">Create</a></li>
-						<li><a href="#">Show</a></li>						
-						<li><a href="#">List</a></li>
+						<li><a href="#/admin/travel/create">Create</a></li>
+						<li><a href="#/admin/travel/show">Show</a></li>
+						<li><a href="#/admin/travel/list">List</a></li>
 						<li class="nav-header">Vacancy</li>
-						<li><a href="#">Create</a></li>
-						<li><a href="#">Show</a></li>
-						<li><a href="#">List</a></li>						
+						<li><a href="#/admin/vacancy/create">Create</a></li>
+						<li><a href="#/admin/vacancy/show">Show</a></li>
+						<li><a href="#/admin/vacancy/list">List</a></li>
 						<li class="nav-header">Country</li>
-						<li><a href="#">Create</a></li>
-						<li><a href="#">Show</a></li>
-						<li><a href="#">List</a></li>
+						<li><a href="#/admin/country/create">Create</a></li>
+						<li><a href="#/admin/country/show">Show</a></li>
+						<li><a href="#/admin/country/list">List</a></li>
 						<li class="nav-header">Transport</li>
-						<li><a href="#">Create</a></li>
-						<li><a href="#">Show</a></li>
-						<li><a href="#">List</a></li>
+						<li><a href="#/admin/transport/create">Create</a></li>
+						<li><a href="#/admin/transport/show">Show</a></li>
+						<li><a href="#/admin/transport/list">List</a></li>
 						
 					</ul>
 				</div>
 				<!--/.well -->
 			</div>
 			<!--/span-->
-			<div class="span9">
+			<div class="span9" ng-view>
 
-				<div class="row-fluid">
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details &raquo;</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details &raquo;</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details &raquo;</a>
-						</p>
-					</div>
-					<!--/span-->
-				</div>
-				<!--/row-->
-				<div class="row-fluid">
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details &raquo;</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details &raquo;</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details &raquo;</a>
-						</p>
-					</div>
-					<!--/span-->
-				</div>
-				<!--/row-->
 			</div>
 			<!--/span-->
 		</div>

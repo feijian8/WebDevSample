@@ -1,6 +1,6 @@
-if(window.traveltours.travel === undefined) {
-	traveltours.travel = {};	
-}
+
+traveltours.travel = {};
+
 
 traveltours.travel.TravelController = function($scope, $routeParams, $resource) {
 

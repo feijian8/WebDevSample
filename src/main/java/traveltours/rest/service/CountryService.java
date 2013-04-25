@@ -11,16 +11,23 @@ import javax.ws.rs.Produces;
 
 import traveltours.rest.model.Country;
 
+@Path("/country")
 public class CountryService extends ResourceService<Country>{
+
+    private static Country country;
 
 	@Override
 	@Path("/create")
 	@POST
 	@Consumes("application/json")
 	@Produces("application/json")
-	public Country create(Country resource) {
-		// TODO Auto-generated method stub
-		return null;
+	public Country create(Country country) {
+
+        country.setId("1");
+
+        CountryService.country = country;
+
+		return country;
 	}
 
 	@Override
