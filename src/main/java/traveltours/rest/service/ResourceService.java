@@ -10,11 +10,10 @@ import java.util.List;
 public abstract class ResourceService<T extends Resource> {
 
     @Path("/create")
-    @POST
-    //@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @POST    
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    //public abstract T create(MultivaluedMap<String, String> formParams);
-    public abstract T create(String formParams);
+    public abstract T create(T resource );
 
 
     @Path("/read/{id}")
@@ -24,11 +23,12 @@ public abstract class ResourceService<T extends Resource> {
 
     @Path("/update")
     @POST
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public abstract T update(MultivaluedMap<String, String> formParams);
+    public abstract T update(T resource );
 
     @Path("/delete")
+    @Consumes(MediaType.APPLICATION_JSON)
     @DELETE
     public abstract void delete(T resource);
 

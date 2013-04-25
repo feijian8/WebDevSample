@@ -3,7 +3,12 @@ package traveltours.rest.service;
 import traveltours.rest.model.Vacancy;
 import traveltours.rest.model.VacancyType;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MultivaluedMap;
 import java.util.List;
 
@@ -11,6 +16,53 @@ import java.util.List;
 public class VacancyService extends ResourceService<Vacancy> {
 
     private static Vacancy currentStub;
+
+	@Override
+	@Path("/create")
+	@POST
+	@Consumes("application/json")
+	@Produces("application/json")
+	public Vacancy create(Vacancy resource) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	@Path("/read/{id}")
+	@GET
+	@Produces("application/json")
+	public Vacancy read(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	@Path("/update")
+	@POST
+	@Consumes("application/json")
+	@Produces("application/json")
+	public Vacancy update(Vacancy resource) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	@Path("/delete")
+	@Consumes("application/json")
+	@DELETE
+	public void delete(Vacancy resource) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	@Path("/list")
+	@GET
+	@Produces("application/json")
+	public List<Vacancy> all() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
     /*
     @Override
@@ -31,31 +83,7 @@ public class VacancyService extends ResourceService<Vacancy> {
     }
     */
 
-    @Override
-    public Vacancy create(String formParams) {
-        return null;
-    }
 
-    @Override
-    public Vacancy read(String id) {
-        System.out.println("VacancyService.read");
-        return VacancyService.currentStub;
-    }
-
-    @Override
-    public Vacancy update(MultivaluedMap<String, String> formParams) {
-        System.out.println("VacancyService.update");
-        return null;
-    }
-
-    @Override
-    public void delete(Vacancy resource) {
-        System.out.println("VacancyService.delete");
-    }
-
-    @Override
-    public List<Vacancy> all() {
-        System.out.println("VacancyService.all");
-        return null;
-    }
+    
+    
 }
