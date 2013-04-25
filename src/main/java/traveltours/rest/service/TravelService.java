@@ -64,26 +64,6 @@ public class TravelService extends ResourceService<Travel> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-    /*
-    public Travel create(MultivaluedMap<String, String> formParams) {
-        System.out.println("TravelService.create: " + formParams);
-
-        String country = formParams.getFirst("country");
-        String area = formParams.getFirst("area");
-
-        Travel travel = new Travel();
-        //dummy...
-        travel.setId("1");
-        travel.setCountry(country);
-        travel.setArea(area);
-
-        TravelService.currentStub = travel;
-        return travel;
-    }
-    */
-
-
-    
+   
     
 }
