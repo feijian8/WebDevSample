@@ -1,12 +1,12 @@
-<div ng-controller="traveltours.admin.country.CreateController">
+<div>
 
     <form ng-submit="createCountry(country, area)">
         <fieldset>
             <legend>Create Country</legend>
             <label>Country</label>
-            <input type="text" ng-model="country" />
+            <input type="text" placeholder="Enter country name" ng-model="country"  />
             <label>Area</label>
-            <input type="text" ng-model="area" />
+            <input type="text" ng-model="area" placeholder="Enter area"/>
             <br>
             <button type="submit" class="btn btn-primary">Create Country</button>
         </fieldset>
