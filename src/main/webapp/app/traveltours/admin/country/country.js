@@ -7,14 +7,15 @@ traveltours.admin.country.CreateController = function ($scope, $routeParams, $re
 
     $scope.createCountry = function (countryParam, areaParam) {
 
-        var countryProxy = $resource('rest/country/create');
-        countryProxy.country = countryParam;
+        var CountryProxy = $resource('rest/country/create');
+        var country = new CountryProxy();
+        country.country = countryParam;
 
         var areas = new Array();
         areas.push(areaParam);
-        countryProxy.areas = areas;
+        country.areas = areas;
 
-        countryProxy.$save(function () {
+        country.$save(function () {
             $scope.go('/admin/country/list');
         });
     };
