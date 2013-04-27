@@ -1,0 +1,20 @@
+<div>
+
+    <form ng-submit="update(country)">
+        <fieldset>
+            <legend>Update Country</legend>
+            <label>Country</label>
+            <input type="text" ng-model="country.country"  />
+            <label>Areas</label>
+            <table>
+                  <tr ng-repeat="area in country.areas">
+                      <td><input type="text" ng-model="area" /></td>
+                  </tr>
+            </table>
+            <input type="text" ng-model="area" placeholder="Enter area"/>
+            <br>
+            <button type="submit" class="btn btn-primary">Create Country</button>
+        </fieldset>
+    </form>
+
+</div>
