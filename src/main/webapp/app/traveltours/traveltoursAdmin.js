@@ -8,6 +8,23 @@ traveltours.admin.BaseController = function ($scope, $routeParams, $resource, $l
     $scope.go = function(path) {
         $location.url(path);
     };
+
+    $scope.alerts = [];
+
+    $scope.addSuccessMessage = function(msg) {
+        var alert = { type: 'success', msg: msg };
+        $scope.alerts.push(alert);
+    };
+
+    $scope.addErrorMessage = function(msg) {
+        var alert = { type: 'error', msg: msg };
+        $scope.alerts.push(alert);
+    };
+
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    }
+
 };
 
 //Set up the routes....

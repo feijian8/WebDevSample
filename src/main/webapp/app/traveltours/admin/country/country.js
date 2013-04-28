@@ -12,14 +12,14 @@ traveltours.admin.country.CreateController = function ($scope, $routeParams, $re
         $scope.newArea = '';
     };
 
-    $scope.removeArea = function(area) {
-        var areas = $scope.country.areas;
-        removeElement(areas, area);
+    $scope.removeArea = function(index) {
+        $scope.country.areas.splice(index, 1);
     };
 
     $scope.createCountry = function () {
         var countryToCreate = $scope.country;
         countryService.create(country, function (countryToCreate) {
+            $scope.addSuccessMessage("Country was created");
             $scope.go('/admin/country/list');
         });
     };
@@ -39,15 +39,15 @@ traveltours.admin.country.UpdateController = function ($scope, $routeParams, $re
         $scope.newArea = undefined;
     };
 
-    $scope.removeArea = function(area) {
-        var areas = $scope.country.areas;
-        removeElement(areas, area);
+    $scope.removeArea = function(index) {
+        $scope.country.areas.splice(index, 1);
     };
 
     $scope.updateCountry = function (country) {
         var country = $scope.country;
         console.log("updating country with id: " + country.id);
         countryService.update(country, function (country) {
+            $scope.addSuccessMessage("Country was updated");
             $scope.go('/admin/country/show/' + country.id);
         });
     };

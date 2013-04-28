@@ -16,7 +16,7 @@
                 <tr ng-repeat="area in country.areas">
                     <td>
                         <span>{{area}}</span>
-                        <div class="icon-minus-sign" ng-click="removeArea(area)"></div>
+                        <div class="icon-minus-sign" ng-click="removeArea($index)"></div>
                     </td>
                 </tr>
                 <tr>

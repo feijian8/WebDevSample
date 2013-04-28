@@ -75,6 +75,9 @@
             </div>
             <!--/.well -->
         </div>
+        <div class="span9">
+            <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+        </div>
         <!--/span-->
         <div class="span9" ng-view>
 
