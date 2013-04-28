@@ -18,3 +18,15 @@ function namespace(namespaceString) {
 
     return parent;
 }
+
+
+function removeElement(array, value) {
+
+    var idx = array.indexOf(value);
+    if(idx != -1) {
+        //remove the element
+        array = array.splice(idx, 1);
+    }
+
+    return array;
+}

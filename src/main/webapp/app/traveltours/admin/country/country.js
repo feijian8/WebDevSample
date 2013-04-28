@@ -4,17 +4,24 @@ traveltours.admin.country.CreateController = function ($scope, $routeParams, $re
 
     var country = new traveltours.model.Country();
     $scope.country = country;
+    $scope.newArea = '';
 
-    $scope.area;
+    $scope.addArea = function() {
+        //push an empty area into country.areas
+        $scope.country.areas.push($scope.newArea);
+        $scope.newArea = '';
+    };
 
-    $scope.createCountry = function (country, area) {
-        console.log("Create: " + country);
-        //temporary...
-        country.areas.push(area);
-        countryService.create(country, function (country) {
+    $scope.removeArea = function(area) {
+        var areas = $scope.country.areas;
+        removeElement(areas, area);
+    };
+
+    $scope.createCountry = function () {
+        var countryToCreate = $scope.country;
+        countryService.create(country, function (countryToCreate) {
             $scope.go('/admin/country/list');
         });
-
     };
 };
 

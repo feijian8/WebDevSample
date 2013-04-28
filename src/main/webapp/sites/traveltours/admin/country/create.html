@@ -1,14 +1,36 @@
 <div>
 
-    <form ng-submit="createCountry(country, area)">
+    <form ng-submit="createCountry()">
         <fieldset>
             <legend>Create Country</legend>
-            <label>Country</label>
-            <input type="text" placeholder="Enter country name" ng-model="country.country" required />
-            <label>Area</label>
-            <input type="text" ng-model="area" placeholder="Enter area" required/>
-            <br>
-            <button type="submit" class="btn btn-primary">Create Country</button>
+            <table>
+                <tr>
+                    <td><label>Country</label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Enter country name" ng-model="country.country" required/></td>
+                </tr>
+                <tr>
+                    <td><label>Areas</label></td>
+                </tr>
+                <tr ng-repeat="area in country.areas">
+                    <td>
+                        <span>{{area}}</span>
+                        <div class="icon-minus-sign" ng-click="removeArea(area)"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" ng-model="newArea" placeholder="Enter area"/>
+                        <div class="icon-plus-sign" ng-click="addArea()"></div>
+                    </td>
+                </tr>
+                <tr>
+                   <td>
+                       <button type="submit" class="btn btn-primary">Create Country</button>
+                   </td>
+                </tr>
+            </table>
         </fieldset>
     </form>
 
