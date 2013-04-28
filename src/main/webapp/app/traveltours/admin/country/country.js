@@ -11,7 +11,7 @@ traveltours.admin.country.CreateController = function ($scope, $routeParams, $re
         console.log("Create: " + country);
         //temporary...
         country.areas.push(area);
-        countryService.create(country, function(country) {
+        countryService.create(country, function (country) {
             $scope.go('/admin/country/list');
         });
 
@@ -20,12 +20,20 @@ traveltours.admin.country.CreateController = function ($scope, $routeParams, $re
 
 traveltours.admin.country.UpdateController = function ($scope, $routeParams, $resource, countryService) {
 
-    var country = countryService.read($routeParams.id, function(country) {
-       $scope.country = country;
+    $scope.addedArea;
+
+    var country = countryService.read($routeParams.id, function (country) {
+        $scope.country = country;
     });
 
+    $scope.addArea = function (area) {
+        $scope.country.areas.push(area);
+        $scope.addedArea = undefined;
+    };
+
     $scope.update = function (country) {
-        countryService.update(function (country) {
+        console.log("updating country with id: " + country.id);
+        countryService.update(country, function (country) {
             $scope.go('/admin/country/show/' + country.id);
         });
     };
@@ -34,7 +42,7 @@ traveltours.admin.country.UpdateController = function ($scope, $routeParams, $re
 
 traveltours.admin.country.ShowController = function ($scope, $routeParams, $resource, countryService) {
 
-    var country = countryService.read($routeParams.id, function(country) {
+    var country = countryService.read($routeParams.id, function (country) {
         $scope.country = country;
     });
 
@@ -46,7 +54,7 @@ traveltours.admin.country.ShowController = function ($scope, $routeParams, $reso
 
 traveltours.admin.country.ListController = function ($scope, $routeParams, $resource, countryService) {
 
-    countryService.list(function(countriesList) {
+    countryService.list(function (countriesList) {
         $scope.countries = countriesList;
     });
 };

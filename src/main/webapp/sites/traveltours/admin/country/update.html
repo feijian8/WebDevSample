@@ -4,16 +4,20 @@
         <fieldset>
             <legend>Update Country</legend>
             <label>Country</label>
-            <input type="text" ng-model="country.country"  />
+            <input type="text" ng-model="country.country" required />
             <label>Areas</label>
             <table>
                   <tr ng-repeat="area in country.areas">
-                      <td><input type="text" ng-model="area" /></td>
+                      <td><input type="text" ng-model="area" required /></td>
                   </tr>
             </table>
-            <input type="text" ng-model="area" placeholder="Enter area"/>
             <br>
-            <button type="submit" class="btn btn-primary">Create Country</button>
+            <label>Add a new area</label>
+            <input type="text" ng-model="addedArea" />
+            <button type="button" class="btn" ng-click="addArea(addedArea)">Add area</button>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary" ng-click="update(country)">Create Country</button>
         </fieldset>
     </form>
 

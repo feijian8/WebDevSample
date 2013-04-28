@@ -55,10 +55,12 @@ traveltours.service.CountryService = function ($resource, $routeParams) {
     };
 
     update = function(country, callback) {
-        var countryUpdateProxy = $resource(REST_BASE_URL + 'update');
-        countryUpdateProxy.country = country.country;
-        countryUpdateProxy.areas = country.areas;
-        countryToUpdate.$save(function (data) {
+        var CountryUpdateProxy = $resource(REST_BASE_URL + 'update');
+        var proxy = new CountryUpdateProxy();
+        proxy.id = country.id;
+        proxy.country = country.country;
+        proxy.areas = country.areas;
+        proxy.$save(function (data) {
             var country = new traveltours.model.Country(data);
             currentCountry = country;
             callback(country)
