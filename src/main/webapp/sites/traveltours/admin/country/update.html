@@ -1,23 +1,39 @@
 <div>
 
-    <form ng-submit="update(country)">
+    <form ng-submit="updateCountry()">
         <fieldset>
             <legend>Update Country</legend>
-            <label>Country</label>
-            <input type="text" ng-model="country.country" required />
-            <label>Areas</label>
             <table>
-                  <tr ng-repeat="area in country.areas">
-                      <td><input type="text" ng-model="area" required /></td>
-                  </tr>
+                <tr>
+                    <td><label>Country</label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" ng-model="country.country" required/></td>
+                </tr>
+                <tr>
+                    <td><label>Areas</label></td>
+                </tr>
+                <tr ng-repeat="area in country.areas">
+                    <td>
+                        <span>{{area}}</span>
+                        <div class="icon-minus-sign" ng-click="removeArea(area)"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Add new area</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" ng-model="newArea" placeholder="Enter area"/>
+                        <div class="icon-plus-sign" ng-click="addArea()"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Create Country</button>
+                    </td>
+                </tr>
             </table>
-            <br>
-            <label>Add a new area</label>
-            <input type="text" ng-model="addedArea" />
-            <button type="button" class="btn" ng-click="addArea(addedArea)">Add area</button>
-            <br>
-            <br>
-            <button type="submit" class="btn btn-primary" ng-click="update(country)">Create Country</button>
         </fieldset>
     </form>
 
