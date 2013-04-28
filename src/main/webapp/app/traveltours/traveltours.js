@@ -1,6 +1,4 @@
-
-traveltours = {};
-
+namespace('traveltours');
 
 var travelToursModule = angular.module('TravelTours', ['ui.bootstrap', 'ngResource']);
 

@@ -1,5 +1,4 @@
-traveltours.home = {};
-
+namespace('traveltours.home');
 
 traveltours.home.HomeController = function ($scope, $routeParams) {
     $scope.myInterval = 5000;

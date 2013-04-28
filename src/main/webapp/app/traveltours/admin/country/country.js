@@ -1,71 +1,59 @@
-traveltours.admin.country = {};
+namespace('traveltours.admin.country');
 
-traveltours.admin.country.CreateController = function ($scope, $routeParams, $resource) {
+traveltours.admin.country.CreateController = function ($scope, $routeParams, $resource, countryService) {
 
-    $scope.country;
+    var country = new traveltours.model.Country();
+    $scope.country = country;
+
     $scope.area;
 
-    $scope.createCountry = function (countryParam, areaParam) {
-
-        var CountryProxy = $resource('rest/country/create');
-        var country = new CountryProxy();
-        country.country = countryParam;
-
-        var areas = new Array();
-        areas.push(areaParam);
-        country.areas = areas;
-
-        country.$save(function () {
+    $scope.createCountry = function (country, area) {
+        console.log("Create: " + country);
+        //temporary...
+        country.areas.push(area);
+        countryService.create(country, function(country) {
             $scope.go('/admin/country/list');
         });
+
     };
 };
 
-traveltours.admin.country.UpdateController = function ($scope, $routeParams, $resource) {
+traveltours.admin.country.UpdateController = function ($scope, $routeParams, $resource, countryService) {
 
-    var countryReadProxy = $resource('rest/country/read/:id');
-    var loadedCountry = countryReadProxy.get({id: $routeParams.id}, function (data) {
-        $scope.country = new traveltours.model.Country(data);
+    var country = countryService.read($routeParams.id, function(country) {
+       $scope.country = country;
     });
 
-    $scope.update = function(country) {
-
-        var countryUpdateProxy = $resource('rest/country/update');
-        countryUpdateProxy.country = country.country;
-        countryUpdateProxy.areas = country.areas;
-        countryToUpdate.$save(function() {
+    $scope.update = function (country) {
+        countryService.update(function (country) {
             $scope.go('/admin/country/show/' + country.id);
         });
     };
 };
 
 
-traveltours.admin.country.ShowController = function ($scope, $routeParams, $resource) {
+traveltours.admin.country.ShowController = function ($scope, $routeParams, $resource, countryService) {
 
-    var countryProxy = $resource('rest/country/read/:id');
-    var loadedCountry = countryProxy.get({id: $routeParams.id}, function (data) {
-        var country = new traveltours.model.Country(data);
+    var country = countryService.read($routeParams.id, function(country) {
         $scope.country = country;
     });
 
-    $scope.update = function(country) {
-        console.log('updating country: ' + country.id);
+    //Function that switches to the update view
+    $scope.update = function (country) {
         $scope.go('/admin/country/update/' + country.id);
     };
 };
 
-traveltours.admin.country.ListController = function ($scope, $routeParams, $resource) {
+traveltours.admin.country.ListController = function ($scope, $routeParams, $resource, countryService) {
 
-    var countries = $resource('rest/country/list');
-    var countriesList = countries.query(function (data) {
-
-        var countriesArray = new Array();
-
-        angular.forEach(countriesList, function (country) {
-            countriesArray.push(country);
-        });
-
+    countryService.list(function(countriesList) {
         $scope.countries = countriesList;
-
     });
 };
+
+//Register the countryService...
+travelToursAdminModule.factory('countryService', ['$resource', '$routeParams',
+    function ($resource, $routeParams) {
+        return traveltours.service.CountryService($resource, $routeParams);
+    }
+]);

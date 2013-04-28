@@ -1,9 +1,9 @@
-traveltours.model = {};
+namespace('traveltours.model');
 
 traveltours.model.Country = function(data) {
 
     var country,
-        areas,
+        areas = [],
         id;
 
     if(data) {

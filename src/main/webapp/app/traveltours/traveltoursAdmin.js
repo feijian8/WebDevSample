@@ -1,5 +1,4 @@
-traveltours = {};
-traveltours.admin = {};
+namespace('traveltours.admin');
 
 var travelToursAdminModule = angular.module('TravelToursAdmin', ['ui.bootstrap', 'ngResource']);
 
