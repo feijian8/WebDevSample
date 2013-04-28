@@ -63,9 +63,9 @@
                     <li><a href="#/admin/vacancy/show">Show</a></li>
                     <li><a href="#/admin/vacancy/list">List</a></li>
                     <li class="nav-header">Country</li>
-                    <li><a href="#/admin/country/create">Create</a></li>
-                    <li><a href="#/admin/country/show">Show</a></li>
-                    <li><a href="#/admin/country/list">List</a></li>
+                    <li ng-class="{active: selected == 'countryCreate'}" ><a href="#/admin/country/create" ng-click="selected = 'countryCreate'">Create</a></li>
+                    <li ng-class="{active: selected == 'countryShow'}"><a href="#/admin/country/show" ng-click="selected = 'countryShow'">Show</a></li>
+                    <li ng-class="{active: selected == 'countryList'}"><a href="#/admin/country/list" ng-click="selected = 'countryList'">List</a></li>
                     <li class="nav-header">Transport</li>
                     <li><a href="#/admin/transport/create">Create</a></li>
                     <li><a href="#/admin/transport/show">Show</a></li>
@@ -75,7 +75,7 @@
             </div>
             <!--/.well -->
         </div>
-        <div class="span9">
+        <div class="span9" ng-show="alerts.length > 0">
             <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
         </div>
         <!--/span-->

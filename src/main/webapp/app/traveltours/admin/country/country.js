@@ -20,6 +20,7 @@ traveltours.admin.country.CreateController = function ($scope, $routeParams, $re
         var countryToCreate = $scope.country;
         countryService.create(country, function (countryToCreate) {
             $scope.addSuccessMessage("Country was created");
+            $scope.setNavigationSelected('countryList');
             $scope.go('/admin/country/list');
         });
     };
