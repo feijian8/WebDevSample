@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="da" ng-app="TravelToursAdmin">
-<head ng-app="TravelTours">
+<html lang="da" id="ng-app" ng-app="TravelToursAdmin">
+<head>
     <meta charset="utf-8">
     <title>TravelTours - Admin</title>
 
@@ -55,22 +55,17 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header">Travel</li>
-                    <li><a href="#/admin/travel/create">Create</a></li>
-                    <li><a href="#/admin/travel/show">Show</a></li>
+                    <li><a href="#/admin/travel/create">Create</a></li>                    
                     <li><a href="#/admin/travel/list">List</a></li>
                     <li class="nav-header">Vacancy</li>
-                    <li><a href="#/admin/vacancy/create">Create</a></li>
-                    <li><a href="#/admin/vacancy/show">Show</a></li>
+                    <li><a href="#/admin/vacancy/create">Create</a></li>                    
                     <li><a href="#/admin/vacancy/list">List</a></li>
                     <li class="nav-header">Country</li>
-                    <li ng-class="{active: selected == 'countryCreate'}" ><a href="#/admin/country/create" ng-click="selected = 'countryCreate'">Create</a></li>
-                    <li ng-class="{active: selected == 'countryShow'}"><a href="#/admin/country/show" ng-click="selected = 'countryShow'">Show</a></li>
+                    <li ng-class="{active: selected == 'countryCreate'}" ><a href="#/admin/country/create" ng-click="selected = 'countryCreate'">Create</a></li>                    
                     <li ng-class="{active: selected == 'countryList'}"><a href="#/admin/country/list" ng-click="selected = 'countryList'">List</a></li>
                     <li class="nav-header">Transport</li>
                     <li><a href="#/admin/transport/create">Create</a></li>
-                    <li><a href="#/admin/transport/show">Show</a></li>
                     <li><a href="#/admin/transport/list">List</a></li>
-
                 </ul>
             </div>
             <!--/.well -->
