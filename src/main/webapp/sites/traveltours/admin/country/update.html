@@ -15,8 +15,10 @@
                 </tr>
                 <tr ng-repeat="area in country.areas">
                     <td>
-                        <span>{{area}}</span>
-                        <div class="icon-minus-sign" ng-click="removeArea($index)"></div>
+                        <div class="input-append">
+                            <input type="text" disabled placeholder="{{area}}" />
+                            <span class="add-on" style="cursor:pointer;" ng-click="removeArea($index)"><i class="icon-minus-sign"></i></span>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -24,13 +26,15 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" ng-model="newArea" placeholder="Enter area"/>
-                        <div class="icon-plus-sign" ng-click="addArea()"></div>
+                        <div class="input-append">
+                            <input type="text" ng-model="newArea" placeholder="Enter area"/>
+                            <span class="add-on" style="cursor:pointer;" ng-click="addArea()"><i class="icon-plus-sign"></i></span>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <button type="submit" class="btn btn-primary">Create Country</button>
+                        <button type="submit" class="btn btn-primary">Update Country</button>
                     </td>
                 </tr>
             </table>
