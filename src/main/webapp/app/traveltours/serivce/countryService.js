@@ -2,6 +2,11 @@ namespace('traveltours.service');
 
 traveltours.service.CountryService = function ($resource, $routeParams) {
 
+    var REST_CREATE_URL = traveltours.REST_BASE_URL + 'country/create';
+    var REST_READ_URL = traveltours.REST_BASE_URL + 'country/read/:id'
+    var REST_LIST_URL = traveltours.REST_BASE_URL + 'country/list';
+    var REST_UPDATE_URL = traveltours.REST_BASE_URL + 'country/update';
+
     var create,
         read,
         update,
@@ -9,11 +14,9 @@ traveltours.service.CountryService = function ($resource, $routeParams) {
         list,
         currentCountry;
 
-    var REST_BASE_URL = 'rest/country/';
-
     create = function (country, callback) {
         console.log("countryService.create");
-        var CountryProxy = $resource(REST_BASE_URL + 'create');
+        var CountryProxy = $resource(REST_CREATE_URL);
         var proxy = new CountryProxy();
         proxy.country = country.country;
         proxy.areas = country.areas;
@@ -34,7 +37,7 @@ traveltours.service.CountryService = function ($resource, $routeParams) {
             return;
         }
 
-        var countryProxy = $resource(REST_BASE_URL + 'read/:id');
+        var countryProxy = $resource(REST_READ_URL);
         var loadedCountry = countryProxy.get({id: $routeParams.id}, function (data) {
             var country = new traveltours.model.Country(data);
             currentCountry = country;
@@ -44,7 +47,7 @@ traveltours.service.CountryService = function ($resource, $routeParams) {
 
     list = function(callback) {
         console.log("countryService.list");
-        var countries = $resource(REST_BASE_URL + 'list');
+        var countries = $resource(REST_LIST_URL);
         var countriesList = countries.query(function (data) {
             var countriesArray = [];
             angular.forEach(countriesList, function (country) {
@@ -55,7 +58,7 @@ traveltours.service.CountryService = function ($resource, $routeParams) {
     };
 
     update = function(country, callback) {
-        var CountryUpdateProxy = $resource(REST_BASE_URL + 'update');
+        var CountryUpdateProxy = $resource(REST_UPDATE_URL);
         var proxy = new CountryUpdateProxy();
         proxy.id = country.id;
         proxy.country = country.country;
